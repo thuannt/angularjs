@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <link rel="icon" href="assets/img/logo_circle.png" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="assets/img/logo_circle.png"/>
+    <link rel="shortcut icon" href="assets/img/logo_circle.png"/>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            createTabs();
+            show_tab();
+        });
+    </script>
+</head>
+<body>
+
+<div id="ewrap" class="page_login">
+    <button class="btn_close"></button>
+    <ul class="tabs">
+        <div class="logo_tab"><img class="logo" src="assets/img/logo_full.png"></div>
+        <li id="atab-1" class="tab-link current" data-tab="tab-1">ĐĂNG KÝ</li>
+        <li id="atab-2" class="tab-link" data-tab="tab-2">ĐĂNG NHẬP</li>
+    </ul>
+    <div id="tab-1" class="tab-content current">
+        <div class="form_full">
+            <input placeholder="Tên tài khoản" type="text" id="username" name="username">
+            <input placeholder="Mật khẩu" type="password" id="password" name="password">
+            <input placeholder="Nhập lại mật khẩu" type="password" id="repassword" name="repassword">
+
+            <div class="dieukhoan"><input type="checkbox" name="agree" id="agree" value="agree">
+                <label for="agree">Đọc và đồng ý <a href="#">điều khoản sử dụng</a></label></div>
+            <div class="activestatus"></div>
+            <button id="submit" class="btn btn_login smoke">Đăng Ký</button>
+            <button class="btn" href="#">Facebook</button>
+            <button class="btn btn_cc green" href="#">Chơi ngay</button>
+        </div>
+    </div>
+    <div id="tab-2" class="tab-content">
+        <div class="form_full">
+            <input placeholder="Tên tài khoản" type="text" name="username">
+            <input placeholder="Mật khẩu" type="password" name="password">
+
+            <div class="activestatus"></div>
+            <div class="tcolumn">
+                <div class="dieukhoan"><input type="checkbox" name="remember" id="remember" value="remember"><label
+                        for="remember">Lưu tài khoản</label></div>
+                <div class="dieukhoan"><a href="#">Quên mật khẩu</a></div>
+            </div>
+            <button class="btn btn_login smoke">Đăng nhập</button>
+            <button class="btn" href="#">Facebook</button>
+            <button class="btn btn_cc green" href="#">Chơi ngay</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
