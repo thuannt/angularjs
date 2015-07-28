@@ -7,7 +7,7 @@ myApp.service("GamerService", function ($http,$q) {
             username: user.username,
             password: user.password
         };
-        $http.post("http://localhost/angular/api.php", data, options)
+        $http.post("/api.php", data, options)
             .success(function (data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available
