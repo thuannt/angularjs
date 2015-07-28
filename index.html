@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="todo.css">
+    <script src="app/components/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/services/GamerService.js"></script>
+    <script src="app/controllers/UserCtrl.js"></script>
+</head>
+<body  ng-app="myApp">
+    <form ng-controller="UserCtrl">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" ng-model="user.username" id="username"/>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" ng-model="user.password" id="password"/>
+        </div>
+        <button type="submit" ng-click="login()">Login</button>
+    </form>
+</body>
+</html>
