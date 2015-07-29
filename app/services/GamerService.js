@@ -1,9 +1,23 @@
 options = {};
-myApp.service("GamerService", ["$http","$q","md5",function ($http,$q,md5) {
+myApp.service("GamerService", ["$rootScope","$http","$q","md5","APP_CONFIG",function ($rootScope,$http,$q,md5,APP_CONFIG) {
+
+    function getLoginUrl(){
+        return $rootScope.GAME_CONFIG.link_api+"sdk/login";
+    }
+
+    function getRegisterUrl(){
+        return $rootScope.GAME_CONFIG.link_api+"sdk/signup";
+    }
+
+    function getAccountGetUrl(){
+        return $rootScope.GAME_CONFIG.link_api+"sdk/listacc";
+    }
+
+
     function prepareParam(params){
-        params.game_code = game_code;
-        params.did=did;
-        params.ref=ref;
+        for(key in APP_CONFIG.PARAMS){
+            params[key] = APP_CONFIG.PARAMS[key]
+        }
         return params;
     };
 
@@ -12,7 +26,7 @@ myApp.service("GamerService", ["$http","$q","md5",function ($http,$q,md5) {
         var data = prepareParam(user);
 
         var deferred = $q.defer();
-        $http.post("http://apidev.9chau.com/sdk/login", data, options)
+        $http.post(getLoginUrl(), data, options)
             .success(function (data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available
@@ -29,7 +43,7 @@ myApp.service("GamerService", ["$http","$q","md5",function ($http,$q,md5) {
         var deferred = $q.defer();
         var data = prepareParam(user)
 
-        $http.post("http://apidev.9chau.com/sdk/signup", data, options)
+        $http.post(getRegisterUrl(), data, options)
             .success(function (data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available
@@ -42,4 +56,21 @@ myApp.service("GamerService", ["$http","$q","md5",function ($http,$q,md5) {
             });
         return deferred.promise;
     };
+
+    this.getGameAccounts = function(params){
+        var deferred = $q.defer();
+        var data = prepareParam(params);
+        $http.post(getAccountGetUrl(), data, options)
+            .success(function (data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                deferred.resolve(data);
+            }).
+            error(function (data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                deferred.reject(data);
+            });
+        return deferred.promise;
+    }
 }]);

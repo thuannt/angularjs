@@ -1,5 +1,0 @@
-<form action="" method="POST">
-    Tên đăng nhập: <input type="text" ng-model="username" />
-    Mật khẩu: <input type="password" ng-model="password" />
-    <button type="submit">Đăng nhập</button>
-</form>

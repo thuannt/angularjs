@@ -1,0 +1,31 @@
+<div id="ewrap" class="page_chon">
+    <button class="btn_close">Close</button>
+
+
+    <div class="logo_tab">
+        <img class="logo" src="webview/assets/img/logo_full.png">
+    </div>
+
+    <div class="bg_body">
+        <div class="account_box">
+            <div class="account">Tài khoản 9chau: <span class="name">{{tmp_gamer.getDisplay()}}</span></div>
+            <div class="update">
+                <button class="btn btn_update" ng-click="goLogin()">Update</button>
+            </div>
+        </div>
+        <div class="lbl_gameacc">Chọn tài khoản game: <span class="game">{{GAME_CONFIG.game_name}}</span></div>
+
+        <div class="gameacc_list">
+            <div class="list">
+                <select size="3">
+                    <option ng-repeat="account in list_accounts" value="{{account.id}}">{{account.username}}</option>
+                </select>
+            </div>
+            <div class="add">
+                <button class="btn btn_add">Update</button>
+            </div>
+        </div>
+
+        <button class="btn green">Xác nhận</button>
+    </div>
+</div>

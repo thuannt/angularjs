@@ -14,6 +14,12 @@ myApp.factory("Gamer",function(){
         }
         return true;
     };
+    Gamer.prototype.getDisplay = function(){
+        if(this.name === undefined || this.name.trim()==""){
+            return this.username;
+        }
+        return this.name;
+    };
     Gamer.prototype.load = function(data){
         if(data.id !== undefined){
             this.id = data.id;

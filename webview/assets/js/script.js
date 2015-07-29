@@ -29,7 +29,7 @@ function readyDetectionDeviceDetail(){
 }
 
 function createTabs(){
-	$('.tabs li').click(function(){
+	$('.tabs li').bind("touchstart click", function(){
 		var tab_id = $(this).attr('data-tab');
 
 		$('.tabs li').removeClass('current');
