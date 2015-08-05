@@ -145,7 +145,7 @@ function remove_hash(){
 }
 
 function show_tab(){
-	if (window.location.hash != '' && window.location.hash == '#laylink') {
+    if (window.location.hash != '' && window.location.hash == '#laylink') {
 		$('.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
 

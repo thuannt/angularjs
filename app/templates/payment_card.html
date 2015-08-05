@@ -1,0 +1,62 @@
+<div id="ewrap" class="page_payments">
+	<button class="btn_close">Close</button>
+	
+	<div class="grp_profile">
+		<div>
+			<div class="profile">
+				<div class="avatar">
+					<img src="{{GAME_CONFIG.icon}}">
+				</div>
+				<div class="info">
+					<span class="game">{{GAME_CONFIG.game_name}}</span>
+					<span class="name">{{gamer.id}}</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="profile">
+				<div class="avatar">
+					<img src="http://beta.9chau.com/public/front/assets/img/logo_square.png">
+				</div>
+				<div class="info">
+					<span class="acc acc_has">{{gamer.username}}</span>
+					<span class="coin">{{(gamer.refund ? gamer.refund : 0) + " C"}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg_body">
+		<div class="form_list">
+			<h1 class="title">Chọn hình thức thanh toán</h1>
+			<div class="list_item type">
+				<div class="image"><span class="icon icon_card"></span></div>
+				<div class="label">Thẻ cào</div>
+				<div class="info">1.000.000 đ = 1.000 Xu</div>
+			</div>
+			<div class="list_item">
+				<div class="label">
+					<select>
+						<option value="viettel">Viettel</option>
+						<option value="mobi">Mobiphone</option>
+						<option value="vina">Vinaphone</option>
+					</select>
+				</div>
+			</div>
+			<div class="list_item">
+				<div class="label"><input type="text" placeholder="Nhập số serial..." /></div>
+			</div>
+			<div class="list_item">
+				<div class="label"><input type="text" placeholder="Nhập mã thẻ..." /></div>
+			</div>
+			<div class="btn_group">
+				<div>
+					<button class="btn fb_color">Nạp</button>
+				</div>
+				<div>
+					<button class="btn btn_cc green" ng-click="toPayments()">Bỏ qua</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

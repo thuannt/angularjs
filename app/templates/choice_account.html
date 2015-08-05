@@ -8,7 +8,7 @@
 
     <div class="bg_body">
         <div class="account_box">
-            <div class="account">Tài khoản 9chau: <span class="name">{{tmp_gamer.getDisplay()}}</span></div>
+            <div class="account">Tài khoản 9chau: <span class="name">{{gamer.username}}</span></div>
             <div class="update">
                 <button class="btn btn_update" ng-click="goLogin()">Update</button>
             </div>
@@ -16,16 +16,28 @@
         <div class="lbl_gameacc">Chọn tài khoản game: <span class="game">{{GAME_CONFIG.game_name}}</span></div>
 
         <div class="gameacc_list">
-            <div class="list">
-                <select size="3">
-                    <option ng-repeat="account in list_accounts" value="{{account.id}}">{{account.username}}</option>
+            <div class="block" ng-class="list_accounts ? '' : 'disabled'">
+                <select size="3" ng-model="selectd_account" ng-if="list_accounts">
+                    <option ng-repeat="account in list_accounts" value="{{account.username}}">{{account.username}}</option>
                 </select>
             </div>
+            <div class="block block_add" ng-class="list_accounts ? 'disabled' : ''">
+                <label>Nhập tên tài khoản Game mới:</label>
+                <input placeholder="6-18 ký tự, a-z, 0-9" type="text" />
+            </div>
             <div class="add">
-                <button class="btn btn_add">Update</button>
+                <button class="btn btn_add" ng-class="list_accounts ? 'btn_change' : ''">Update</button>
             </div>
         </div>
 
-        <button class="btn green">Xác nhận</button>
+        <button class="btn green" ng-click="loginGame()">Xác nhận</button>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $(".btn_add").bind("touchstart", function(){
+            $(".gameacc_list .block").toggleClass('disabled');
+            $(".gameacc_list .add button").toggleClass('btn_add_back');
+        });
+    });
+</script>

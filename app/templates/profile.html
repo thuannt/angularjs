@@ -1,31 +1,62 @@
-<h1>Profile</h1>
-<table>
-    <tr>
-        <td>ID</td>
-        <td>{{gamer.id}}</td>
-    </tr>
-    <tr>
-        <td>email</td>
-        <td>{{gamer.email}}</td>
-    </tr>
-    <tr>
-        <td>username</td>
-        <td>{{gamer.username}}</td>
-    </tr>
-    <tr>
-        <td>mobile</td>
-        <td>{{gamer.mobile}}</td>
-    </tr>
-    <tr>
-        <td>name</td>
-        <td>{{gamer.name}}</td>
-    </tr>
-    <tr>
-        <td>is_playnow</td>
-        <td>{{gamer.is_playnow}}</td>
-    </tr>
-    <tr>
-        <td>refund</td>
-        <td>{{gamer.refund}}</td>
-    </tr>
-</table>
+<div id="ewrap" class="page_profile">
+	<button class="btn_close">Close</button>
+	
+	<div class="profile">
+		<div class="avatar">
+			<img src="http://beta.9chau.com/public/front/assets/img/logo_square.png">
+		</div>
+		<div class="info">
+			<span class="name">{{gamer.name}}</span>
+			<span class="coin">{{gamer.refund}}</span>
+		</div>
+		<div class="logout">
+			<button class="btn_logout" ng-click="doLogout()">Đăng xuất</button>
+		</div>
+	</div>
+    <ul class="tabs">
+        <li id="atab-1" class="tab-link current" data-tab="tab-1">TÀI KHOẢN</li>
+        <li id="atab-2" class="tab-link" data-tab="tab-2">HỖ TRỢ</li>
+    </ul>
+	<div class="bg_body">
+		<div id="tab-1" class="tab-content current">
+			<div class="form_full">
+				<div class="list_item">
+					<div class="image"><span class="icon icon_user"></span></div>
+					<div class="label">Tài khoản</div>
+					<div class="info">{{gamer.username}}</div>
+				</div>
+				<div class="list_item">
+					<div class="image"><span class="icon icon_id"></span></div>
+					<div class="label">Tên hiển thị</div>
+					<div class="info">{{gamer.name}}</div>
+				</div>
+				<div class="list_item">
+					<div class="image"><span class="icon icon_email"></span></div>
+					<div class="label">Email</div>
+					<div class="info">{{gamer.email}}</div>
+					<div class="button" ng-if="gamer.email" ><button class="btn">Xóa</button></div>
+				</div>
+				<div class="list_item">
+					<div class="image"><span class="icon icon_mobile"></span></div>
+					<div class="label">Điện thoại</div>
+					<div class="info">{{gamer.mobile}}</div>
+					<div class="button" ng-if="gamer.mobile" ><button class="btn">Xóa</button></div>
+				</div>
+			</div>
+		</div>
+		<div id="tab-2" class="tab-content">
+			<div class="content_help">
+				<p>Truy cập 9chau.com để chuyển C vào Game và nhận các ưu đãi từ hệ thống.</p>
+				<p></p>
+				<p>Hotline: 123456789</p>
+				<p>Email: cskh@9chau.com</p>
+				<p>Quảng cáo: biz@9chau.com</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function () {
+		createTabs();
+	});
+</script>

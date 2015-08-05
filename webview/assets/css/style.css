@@ -92,7 +92,7 @@ select{
     line-height: 25px;
     height: 25px;
     overflow: hidden;
-    background: url("../img/icons/arrow_down_blue.png") no-repeat right 50%;
+    background: url("../img/icons/arrow_down_blue.png") no-repeat 50%;
     background-size: 30px;
     font-size: 12px;
     font-weight: 300;
@@ -240,12 +240,13 @@ a:hover,a:focus {
     z-index: 100;
 }
 #loading-box{
+    /* display: block; */
     z-index: 102;
     position: fixed;
     width: 100%;
     height: 100%;
-    display: none;
     background-color: rgba(0,0,0,0.3);
+	background: rgba(0, 0, 0, 0.3) url("http://9chau.com/public/front/assets/img/loading/loading-spinning-bubbles.svg") no-repeat 50% 50%;
 }
 .confirm_ok{
     font-weight: 300;
@@ -277,75 +278,6 @@ a:hover,a:focus {
     font-weight:500;
 }
 
-.line{
-    right: 0px;
-    left: 0px;
-    top: 0;
-    height: 1px;
-    position: relative;
-    background: #0E1015;
-    background: -moz-linear-gradient(left, #0E1015 0%, #203a56 50%, #0E1015 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #0E1015), color-stop(50%, #203a56), color-stop(100%, #0E1015));
-    background: -webkit-linear-gradient(left, #0E1015 0%, #203A56 50%, #0E1015 100%);
-    background: -o-linear-gradient(left, #0E1015 0%, #203a56 50%, #0E1015 100%);
-    background: -ms-linear-gradient(left, #0E1015 0%, #203a56 50%, #0E1015 100%);
-    background: linear-gradient(to right, #0E1015 0%, #203A56 50%, #0E1015 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0E1015', endColorstr='#203a56', GradientType=1 );
-}
-
-
-/*-- paging --*/
-.paging {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: 0 auto;
-    max-width: 300px;
-}
-
-.paging span {
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    margin: 0 4px;
-    color: #777;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 25px;
-    background: #FFF;
-    border-radius: 3px;
-    vertical-align: top;
-    cursor: pointer;
-}
-.paging span:first-of-type{
-    margin-left: 0;
-}
-.paging span:last-of-type{
-    margin-right: 0;
-}
-.paging span.current {
-    background: #2A84D7;
-    color: #fff;
-}
-
-.paging span.first {
-    background-position: 0 -45px;
-}
-
-.paging span.prev {
-    margin: 0 13px 0 4px;
-    background-position: 0 -75px;
-}
-
-.paging span.next {
-    margin: 0 3px 0 14px;
-    background-position: 0 -105px;
-}
-
-.paging span.last {
-    background-position: 0 -135px;
-}
-/*------------*/
 /*------------END-utility-*/
 
 
@@ -357,7 +289,7 @@ a:hover,a:focus {
 	position: relative;
 	margin: 0 auto;
 	max-width: 460px;
-	width: 100%;
+	width: 94%;
 	/* background-color: rgb(245, 245, 245); */
 	background-color: rgb(255, 255, 255);
 	display: table;
@@ -366,10 +298,20 @@ a:hover,a:focus {
 	/* padding: 8px; */
 }
 
+
+#ewrap .hotline{
+		display: block;
+    text-align: center;
+    font-size: 14px;
+	padding: 5px;
+}
+
+#ewrap .hotline span{
+    font-weight: 700;
+}
 /*------------END-ewrap*/
 
 
-/*----START_login----*/
 .cyan{ background-color: #66C0F4; }
 .green{ background-color: rgb(163,205,14);}
 .fb_color{ background-color: #4C6AAA;}
@@ -381,19 +323,34 @@ a:hover,a:focus {
 }
 
 .btn_close{
-	width: 18px;
-	height: 18px;
-	position: absolute;
-	right: 5px;
-	top: 5px;
-	background: url("../img/icons/close.png") no-repeat right 50%;
-	background-size: 18px;
-	text-indent: -999em;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url("../img/icons/close.png") no-repeat 50%;
+  background-size: 18px;
+  text-indent: -999em;
 }
 
+
+.btn_back{
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("../img/icons/arrow_left.png") no-repeat 50%;
+  background-size: 18px;
+  text-indent: -999em;
+}
+
+/*----page_login----*/
 .page_login{
 }
-
+.page_login .hotline{
+    padding: 10px 0 0 !important;
+}
 
 .page_login .bg_body{
 	background-color: rgb(245,245,245);
@@ -491,6 +448,7 @@ a:hover,a:focus {
 .page_login .btn_group div{
 	display: table-cell;
     vertical-align: middle;
+	width: 50%;
 }
 
 .page_login .btn_group div:first-of-type{
@@ -682,9 +640,7 @@ width: 100%;
 
 
 
-
-
-/* chon */
+/* page_chon */
 .page_chon{
 }
 
@@ -723,6 +679,7 @@ display: table-cell;
 
 .page_chon .account_box .account {
     font-size: 14px;
+	padding-left: 5px;
 }
 .page_chon .account_box .account .name{
 	color: rgb(30,128,242);
@@ -743,11 +700,16 @@ display: table-cell;
 	color: rgb(30,128,242);
 }
 
+.page_chon  .btn_pln{
+	margin-bottom: 10px;
+	width: 70%;
+}
+
 .page_chon  .btn_update {
 	width: 40px;
 	height: 40px;
 	text-indent: -999em;
-    background: url("../img/icons/reload.png") no-repeat right 50%;
+    background: url("../img/icons/reload.png") no-repeat 50%;
     background-size: 40px;
     padding: 0;
 }
@@ -767,6 +729,36 @@ display: table-cell;
 	vertical-align: middle;
 }
 
+.gameacc_list  .block_add label{
+
+	width: 100%;
+	  display: table-cell;
+	  vertical-align: middle;
+	font-size: 14px;
+	padding: 5px;
+}
+.gameacc_list  .block_add input{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    width: 90%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    padding-left: 5px;
+    padding-top: 5px;
+    color: rgb(30, 128, 242);
+}
+
+.gameacc_list .disabled{
+	display:none;
+}
+
+.gameacc_list  .block_add input::-webkit-input-placeholder {color: rgb(30, 128, 242);font-weight: 300; font-style: italic;font-size:15px;}
+.gameacc_list  .block_add input:-moz-placeholder {color: rgb(30, 128, 242);font-weight: 300;font-style: italic;font-size:15px;}
+.gameacc_list  .block_add input::-moz-placeholder {color: rgb(30, 128, 242);font-weight: 300;font-size:15px;}
+.gameacc_list  .block_add input:-ms-input-placeholder {color: rgb(30, 128, 242);font-weight: 300;font-size:15px;}
 
 .gameacc_list select{
     border: none;
@@ -775,13 +767,13 @@ display: table-cell;
     padding: 3px 5px;
 }
 
-.gameacc_list select option{
+.gameacc_list .block select option{
 	font-size: 14px;
     padding: 5px;
     font-weight: 700 !important;
     color: rgb(30,128,242);
 }
-.gameacc_list select option:checked{
+.gameacc_list .block select option:checked{
 	color: #fff;
 	background-color: rgb(30,128,242);
 }
@@ -790,17 +782,24 @@ display: table-cell;
     width: 40px;
 }
 
+.page_chon .btn {
+	  width: 80%;
+}
+
 .page_chon .btn_add {
     width: 40px;
     height: 40px;
     text-indent: -999em;
-    background: url("../img/icons/add_user.png") no-repeat right 50%;
+    background: url("../img/icons/add_user.png") no-repeat 50%;
     background-size: 40px;
     padding: 0;
 }
 
 
-
+.page_chon .btn_add_back {
+    background: url("../img/icons/arrow_left.png") no-repeat 50%;
+    background-size: 40px;
+}
 
 
 /* profile */
@@ -973,27 +972,27 @@ padding-right: 5px;
 	  width: 30px;
 	  height: 30px;
 	text-indent: -999em;
-	background: url("../img/icons/user_black.png") no-repeat right 50%;
+	background: url("../img/icons/user_black.png") no-repeat 50%;
 	background-size: 30px;
 	padding: 0;
 	display: block;
 }
 
 .page_profile .form_full .list_item .image .icon.icon_user{
-	background: url("../img/icons/user_black.png") no-repeat right 50%;
+	background: url("../img/icons/user_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 
 .page_profile .form_full .list_item .image .icon.icon_id{
-	background: url("../img/icons/id_black.png") no-repeat right 50%;
+	background: url("../img/icons/id_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 .page_profile .form_full .list_item .image .icon.icon_email{
-	background: url("../img/icons/email_black.png") no-repeat right 50%;
+	background: url("../img/icons/email_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 .page_profile .form_full .list_item .image .icon.icon_mobile{
-	background: url("../img/icons/mobile_black.png") no-repeat right 50%;
+	background: url("../img/icons/mobile_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 .page_profile .form_full .list_item .label{
@@ -1006,16 +1005,29 @@ padding-right: 5px;
 	border-bottom: 1px solid rgb(200, 205, 210);
 	font-style: italic;
 }
+.page_profile .form_full .list_item .button{
+	border-bottom: 1px solid rgb(200, 205, 210);
+	text-align: right;
+	width: 50px;
+}
+.page_profile .form_full .list_item .button button{
+	display: inline-block;
+	background-color: rgb(102, 192, 244);
+	width: 40px;
+	line-height: 20px;
+	height: 20px;
+	font-size: 12px;
+}
 
 .page_profile .content_help{
-  color: rgb(23, 26, 33);
-  font-size: 13px;
-  padding: 0 10px;
+	color: rgb(23, 26, 33);
+	font-size: 13px;
+	padding: 0 10px;
 }
 
 .page_profile .content_help p{
-  padding-bottom: 5px;
-  line-height: 1.4em;
+	padding-bottom: 5px;
+	line-height: 1.4em;
 }
 
 
@@ -1028,8 +1040,64 @@ padding-right: 5px;
 
  
  
+.page_profile .btn_group{
+    margin: 0 auto;
+        padding: 0 20px;
+    padding-bottom: 0;
+    text-align: center;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+	    margin-top: 10px;
+}
+.page_profile .btn_group div{
+	display: table-cell;
+    vertical-align: middle;
+	width: 50%;
+}
+
+.page_profile .btn_group div:first-of-type{
+	padding-right: 5px;
+}
+.page_profile .btn_group div:last-of-type{
+	padding-left: 5px;
+}
  
  
+ 
+.page_profile .security_content{
+	    padding: 10px;
+		text-align: center;
+}
+.page_profile .security_content .title{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.page_profile .security_content .title span{
+	color: rgb(29, 120, 243);
+	font-weight: 700;
+	
+}
+.page_profile .security_content .title button{
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(29, 120, 243);
+    display: table;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.page_profile .security_content input{
+    border: none;
+    border-bottom: 1px solid rgb(200, 205, 210);
+    width: 75%;
+    height: 30px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0);
+	
+}
  
  
  
@@ -1138,12 +1206,12 @@ background: rgb(102, 192, 244);
 .page_payments .bg_body{
   background-color: rgb(245, 245, 245);
   border-radius: 0 0 8px 8px;
-  padding: 0 20px 10px;
+  padding: 0 20px 15px;
 }
 
 .page_payments .form_list{
   margin: 0 auto;
-  padding: 10px 0;
+    padding: 10px 0 0;
   border-top: 3px solid rgb(102, 192, 244);
 }
 
@@ -1164,9 +1232,9 @@ background: rgb(102, 192, 244);
 }
 
 
-.page_payments .form_list .list_item:hover,
-.page_payments .form_list .list_item:focus,
-.page_payments .form_list .list_item:active {
+.page_payments .form_list.hasselect .list_item:hover,
+.page_payments .form_list.hasselect .list_item:focus,
+.page_payments .form_list.hasselect .list_item:active {
 	color: #66c0f4;
 
 }
@@ -1179,48 +1247,118 @@ background: rgb(102, 192, 244);
 
 .page_payments .form_list .list_item .image{
 	width: 30px;
-	padding-right: 5px;
+	padding-right: 8px;
 }
 
 .page_payments .form_list .list_item .image .icon{
 	width: 30px;
 	height: 30px;
 	text-indent: -999em;
-	background: url("../img/icons/icon_card.png") no-repeat right 50%;
+	background: url("../img/icons/icon_card.png") no-repeat 50%;
 	background-size: 30px;
 	padding: 0;
 	display: block;
 }
 
 .page_payments .form_list .list_item .image .icon.icon_card{
-	background: url("../img/icons/card_black.png") no-repeat right 50%;
+	background: url("../img/icons/card_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 
 .page_payments .form_list .list_item .image .icon.icon_coin{
-	background: url("../img/icons/coin_black.png") no-repeat right 50%;
+	background: url("../img/icons/coin_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 .page_payments .form_list .list_item .image .icon.icon_bank{
-	background: url("../img/icons/bank_black.png") no-repeat right 50%;
+	background: url("../img/icons/bank_black.png") no-repeat 50%;
 	background-size: 30px;
 }
 .page_payments .form_list .list_item .image .icon.icon_credit{
-	background: url("../img/icons/credit_black.png") no-repeat right 50%;
+	background: url("../img/icons/credit_black.png") no-repeat 50%;
 	background-size: 30px;
 }
+
 .page_payments .form_list .list_item .label{
   text-align: left;
-  padding-left: 5px;
   border-bottom: 1px solid rgb(200, 205, 210);
+    height: 34px;
+    line-height: 34px;
 }
 .page_payments .form_list .list_item .info{
-	border-bottom: 1px solid rgb(200, 205, 210);
-	font-style: italic;
+  text-align: right;
+  color: rgb(29, 120, 243);
+  font-style: normal;
+  font-weight: 700;
+  border-bottom: 1px solid rgb(200, 205, 210);
 }
+
+.page_payments .form_list .type .info, .page_payments .form_list .type .label{
+    border-bottom: 1px solid rgb(102, 192, 244) !important;
+}
+.page_payments .form_list .list_item .label input{
+  border: none;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+      background-color: transparent;
+	      padding-left: 5px;
+}
+
+
+.page_payments .form_list .list_item .label input::-webkit-input-placeholder {color: rgb(23, 26, 33);font-weight: 300; font-style: italic;font-size:14px;}
+.page_payments .form_list .list_item .label input:-moz-placeholder {color: rgb(23, 26, 33);font-weight: 300;font-style: italic;font-size:14px;}
+.page_payments .form_list .list_item .label input::-moz-placeholder {color: rgb(23, 26, 33);font-weight: 300;font-size:14px;}
+.page_payments .form_list .list_item .label input:-ms-input-placeholder {color: rgb(23, 26, 33);font-weight: 300;font-size:14px;}
+
+
+.page_payments .form_list .list_item .label select{
+    width: 100%;
+    border: none;
+    font-weight: 300;
+    font-size: 14px;
+    height: 34px;
+    background-color: transparent;
+
+    overflow: hidden;
+    background: url("../img/icons/arrow_down_blue.png") no-repeat right 50%;
+    background-size: 30px;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+.page_payments .form_list .list_item .label select option{
+    font-size: 14px;
+    height: 34px;
+
+}
+
 
  
  
+
+.page_payments .btn_group{
+    margin: 0 auto;
+        padding: 0 20px;
+    padding-bottom: 0;
+    text-align: center;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+	    margin-top: 10px;
+}
+.page_payments .btn_group div{
+	display: table-cell;
+    vertical-align: middle;
+	width: 50%;
+}
+
+.page_payments .btn_group div:first-of-type{
+	padding-right: 5px;
+}
+.page_payments .btn_group div:last-of-type{
+	padding-left: 5px;
+}
  
  
  
@@ -1232,12 +1370,123 @@ background: rgb(102, 192, 244);
  
  
  
- 
- 
- 
- 
- 
- 
+ /*----page_authen----*/
+.page_authen{
+}
+.page_authen .hotline{
+    padding: 10px 0 0 !important;
+}
+
+.page_authen .bg_body{
+	background-color: rgb(245,245,245);
+	border-radius: 0 0 8px 8px;
+	padding-bottom: 10px;
+}
+	
+.page_authen .logo_tab {
+	  display: table;
+	  width: 100%;
+}
+	
+	
+.page_authen .logo{
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  width: auto;
+  height: 40px;
+}
+
+	
+.page_authen ul.tabs{
+  display: table;
+  vertical-align: middle;
+  list-style: none;
+  width: 95%;
+    padding: 0 20px;
+}
+
+.page_authen  ul.tabs li{
+	color: rgb(195, 195, 195);
+	display: table-cell;
+	padding: 10px 15px;
+	cursor: pointer;
+	width: 32%;
+	text-align: center;
+	font-weight: 500;
+	border-right: 1px solid #eee;
+}
+
+.page_authen  ul.tabs li:last-of-type{
+	border-right: none;
+}
+.page_authen  ul.tabs li.current{
+  color: rgb(102, 192, 244);
+  border-bottom: 3px solid rgb(102, 192, 244);
+}
+.page_authen  .tab-content{
+    color:#fff;
+      padding: 10px 10px 0;
+    display: none;
+}
+.page_authen .tab-content.current{
+    display: block;
+}
+
+.page_authen .tab-content .title{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+
+.page_authen .form_full{
+	margin: 0 auto;
+  padding: 10px 80px;
+	padding-bottom: 0;
+	text-align: center;
+}
+
+.page_authen .btn_group{
+    margin: 0 auto;
+        padding: 0 20px;
+    padding-bottom: 0;
+    text-align: center;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+}
+.page_authen .btn_group div{
+	display: table-cell;
+    vertical-align: middle;
+	width: 50%;
+}
+
+.page_authen .btn_group div:first-of-type{
+	padding-right: 5px;
+}
+.page_authen .btn_group div:last-of-type{
+	padding-left: 5px;
+}
+
+
+
+.page_authen .btn_login{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+	margin-bottom: 5px;
+}
+
+.page_authen .btn_fb{
+    color: #FFF;
+	padding-left: 10px;
+    /* background-image: url("../img/icons/facebook.png"); */
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    background-size: 23px;
+}
+
  
  
  
@@ -1266,7 +1515,7 @@ background: rgb(102, 192, 244);
 	  width: auto;
 	  height: 40px;
 	}
-	
+
 	.page_login ul.tabs{
 		width: 100%;
 	}
@@ -1279,10 +1528,22 @@ background: rgb(102, 192, 244);
 	  display: table;
 	  width: 100%;
 	}
-	.page_payments .profile:last-of-type{
 	
+	.page_payments .grp_profile > div:last-of-type{
+		padding-top: 0;
 	}
-
+	
+	.page_payments .profile:last-of-type{
+		  border-left: none;
+	}
+	
+	.page_chon  .btn_pln{
+		width: 100%;
+	}
+	.page_authen .form_full {
+		padding: 20px;
+		padding-bottom: 0;
+	}
 }
 
 @media screen and (max-width:320px) {

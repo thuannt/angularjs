@@ -17,15 +17,15 @@
 					<div class="dieukhoan"><input type="checkbox" name="agree" id="agree" ng-model="signup.readed">
 						<label for="agree">Đọc và đồng ý <button>điều khoản sử dụng</button>.</label></div>
 					<div class="activestatus"></div>
-					<button id="submit" class="btn btn_login smoke" ng-click="doRegister()" ng-disabled="!signup.readed" >Đăng Ký</button>
+					<button id="submit" class="btn btn_login smoke" ng-disabled="!signup.readed" >Đăng Ký</button>
 				</div>
 			</form>
 		</div>
 		<div id="tab-2" class="tab-content">
 			<form ng-submit="doLogin()">
 				<div class="form_full">
-					<input placeholder="Tên tài khoản" type="text" name="username" ng-model="login.username">
-					<input placeholder="Mật khẩu" type="password" name="password" ng-model="login.password">
+					<input placeholder="Tên tài khoản" type="text" name="username" ng-model="login_username">
+					<input placeholder="Mật khẩu" type="password" name="password" ng-model="login_password">
 
 					<div class="activestatus"></div>
 					<div class="tcolumn">
@@ -33,7 +33,7 @@
 								for="remember">Lưu tài khoản</label></div>
 						<div class="dieukhoan"><button>Quên mật khẩu?</button></div>
 					</div>
-					<button class="btn btn_login smoke">Đăng nhập</button>
+					<button type="submit" class="btn btn_login smoke">Đăng nhập</button>
 				</div>
 			</form>
 		</div>
@@ -45,11 +45,11 @@
 				<button class="btn btn_cc green">Chơi ngay</button>
 			</div>
 		</div>
+		<div class="hotline">Hotline: <span>23895677567</span></div>
 	</div>
 </div>
 <script>
     $(document).ready(function () {
         createTabs();
-        show_tab();
     });
 </script>

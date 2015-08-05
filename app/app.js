@@ -1,7 +1,7 @@
 game_code = "sdk";
 did = "browser_angular_thuannt";
 ref = 0;
-myApp = angular.module('myApp', ['ngRoute',"angular-md5"]);
+myApp = angular.module('myApp', ['ngRoute',"angular-md5", "LocalStorageModule"]);
 
 myApp.constant('APP_CONFIG',{
     PARAMS      :{
@@ -14,8 +14,9 @@ myApp.constant('APP_CONFIG',{
         GAME_INFO   :   "http://apidev.9chau.com/sdk/gameinfo"
     }
 });
+
 myApp.config(['$httpProvider','$routeProvider',function($httpProvider,$routeProvider) {
-    console.debug("config");
+    //console.debug("config");
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     //$httpProvider.defaults.headers.post['Access-Control-Allow-Origin'] = "*";
     $httpProvider.defaults.transformRequest = [function (obj) {
@@ -32,19 +33,32 @@ myApp.config(['$httpProvider','$routeProvider',function($httpProvider,$routeProv
         }).
         when('/user/choice_account', {
             templateUrl: 'app/templates/choice_account.html',
-            controller: 'UserCtrl'
+            controller: 'ChoiceCtrl'
         }).
         when('/user/profile', {
             templateUrl: 'app/templates/profile.html',
-            controller: 'UserCtrl'
+            controller: 'ProfileCtrl'
+        }).
+        when('/payments', {
+            templateUrl: 'app/templates/payments.html',
+            controller: 'PaymentsCtrl'
+        }).
+        when('/payment/coin', {
+            templateUrl: 'app/templates/payment_c.html',
+            controller: 'PaymentCCtrl'
+        }).
+        when('/payment/card', {
+            templateUrl: 'app/templates/payment_card.html',
+            controller: 'PaymentCardCtrl'
         }).
         otherwise({
             redirectTo: '/user/login'
         });
 }]);
 
-myApp.run(["$http","$rootScope","APP_CONFIG",function($http, $rootScope, APP_CONFIG){
-    console.debug("run");
+myApp.run(["$http","$rootScope","APP_CONFIG", 'localStorageService',function($http, $rootScope, APP_CONFIG, localStorageService){
+		$rootScope.ready = false;
+    //console.debug("run");
 
     //load dynamic config
     //$http.post("https://api.9chau.com/sdk/gameinfo", APP_CONFIG.PARAMS, options)
@@ -52,12 +66,16 @@ myApp.run(["$http","$rootScope","APP_CONFIG",function($http, $rootScope, APP_CON
         .success(function (data, status, headers, config) {
             // this callback will be called asynchronously
             // when the response is available
-            $rootScope.GAME_CONFIG = data;
+            //$rootScope.GAME_CONFIG = data;
+			
+			localStorageService.set('GAME_CONFIG', data);
+			//console.log(data);
+			$rootScope.ready = true;
         }).
         error(function (data, status, headers, config) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
-            console.log(data);
+            //console.log(data);
         });
 
 

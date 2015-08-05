@@ -1,0 +1,57 @@
+<div id="ewrap" class="page_payments">
+	<button class="btn_close">Close</button>
+	
+	<div class="grp_profile">
+		<div>
+			<div class="profile">
+				<div class="avatar">
+					<img src="http://beta.9chau.com/public/front/assets/img/logo_square.png">
+				</div>
+				<div class="info">
+					<span class="game">{{GAME_CONFIG.game_name}}</span>
+					<span class="name">{{gamer.id}}</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="profile">
+				<div class="avatar">
+					<img src="http://beta.9chau.com/public/front/assets/img/logo_square.png">
+				</div>
+				<div class="info">
+					<span class="acc acc_has">{{gamer.username}}</span>
+					<span class="coin">{{(gamer.refund ? gamer.refund : 0) + " C"}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg_body">
+		<div class="form_list hasselect">
+			<h1 class="title">Chọn hình thức thanh toán</h1>
+			<div class="list_item" ng-click="toPaymentCard()">
+				<div class="image"><span class="icon icon_card"></span></div>
+				<div class="label">Thẻ cào</div>
+			</div>
+			<div class="list_item" ng-click="toPaymentCoin()">
+				<div class="image"><span class="icon icon_coin"></span></div>
+				<div class="label">Chuyển C</div>
+			</div>
+<!--
+ 			<div class="list_item">
+				<div class="image"><span class="icon icon_bank"></span></div>
+				<div class="label">Ngân hàng</div>
+			</div>
+			<div class="list_item">
+				<div class="image"><span class="icon icon_credit"></span></div>
+				<div class="label">Visa/Master</div>
+			</div>
+-->
+		</div>
+	</div>
+</div>
+<script>
+    $(document).ready(function () {
+        createTabs();
+    });
+</script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>Payments</title>
+	<title>Payment Card</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -51,23 +51,33 @@
 	</div>
 
 	<div class="bg_body">
-		<div class="form_list hasselect">
+		<div class="form_list">
 			<h1 class="title">Chọn hình thức thanh toán</h1>
-			<div class="list_item">
-				<div class="image"><span class="icon icon_card"></span></div>
-				<div class="label">Thẻ cào</div>
-			</div>
-			<div class="list_item">
+			<div class="list_item type">
 				<div class="image"><span class="icon icon_coin"></span></div>
 				<div class="label">Chuyển C</div>
+				<div class="info">1.000.000 C = 1.000 Xu</div>
 			</div>
 			<div class="list_item">
-				<div class="image"><span class="icon icon_bank"></span></div>
-				<div class="label">Ngân hàng</div>
+				<div class="label">
+					<select>
+					  <option value="volvo">1.000 C</option>
+					  <option value="saab">2.000 C</option>
+					  <option value="mercedes">5.000 C</option>
+					  <option value="audi">100.000 C</option>
+					</select>
+				</div>
 			</div>
 			<div class="list_item">
-				<div class="image"><span class="icon icon_credit"></span></div>
-				<div class="label">Visa/Master</div>
+				<div class="label"><input type="password" placeholder="Nhập mật khẩu..." /></div>
+			</div>
+			<div class="btn_group">
+				<div>
+					<button class="btn fb_color">Nạp</button>
+				</div>
+				<div>
+					<button class="btn btn_cc green">Bỏ qua</button>
+				</div>
 			</div>
 		</div>
 	</div>
